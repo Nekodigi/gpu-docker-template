@@ -1,0 +1,17 @@
+lightning
+gpustat
+matplotlib
+datasets
+transformers
+hydra-core 
+rich
+einops
+
+black
+ruff
+isort
+mypy
+psutil
+pydocstyle
+pytest
+pytest-cov

@@ -1,0 +1,28 @@
+version: "3.3"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: nekodigi/gpu_essentials
+    container_name: gpu_essentials
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    tty: true
+    shm_size: "4gb"
+    deploy:
+      resources:
+        reservations:
+          memory: 4G
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities:
+                - gpu
+                - utility # nvidia-smi
+                - compute # CUDA
+                - video # NVDEC/NVENC/NVCUVID. For instance to use a hardware accelerated ffmpeg. Skip it if you don't need it
+
