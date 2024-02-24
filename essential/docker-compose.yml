@@ -7,10 +7,10 @@ services:
       dockerfile: Dockerfile
     image: nekodigi/gpu_essentials
     container_name: gpu_essentials
-    ports:
-      - "3000:3000"
     volumes:
       - .:/app
+      - ../../.cache:/root/.cache
+      - ../../.config:/root/.config
     tty: true
     shm_size: "4gb"
     deploy:

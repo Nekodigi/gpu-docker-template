@@ -59,7 +59,6 @@
         "christian-kohler.path-intellisense",
         "mushan.vscode-paste-image",
         "esbenp.prettier-vscode",
-        "ms-vscode.powershell",
         "ms-python.vscode-pylance",
         "ms-python.pylint",
         "ms-python.debugpy",
@@ -67,7 +66,8 @@
         "donjayamanne.python-extension-pack",
         "charliermarsh.ruff",
         "ms-toolsai.tensorboard",
-        "ms-python.autopep8"
+        "ms-python.autopep8",
+        "ms-azuretools.vscode-docker"
       ]
     }
   }

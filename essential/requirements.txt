@@ -6,6 +6,8 @@ transformers
 hydra-core 
 rich
 einops
+faiss-gpu
+thefuck
 
 black
 ruff
