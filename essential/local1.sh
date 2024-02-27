@@ -1,5 +1,4 @@
-USER =""
-GPU_URL=""
+source env.sh
 
 yes y |  ssh-keygen -t rsa -b 4096   All Enter!
 scp ~/.ssh/id_rsa.pub $USER@$GPU_URL:~/.ssh/authorized_keys (pass)
