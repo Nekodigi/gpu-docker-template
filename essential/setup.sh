@@ -1,7 +1,5 @@
 echo '
 GPU_URL=""
-USER_NAME=""
-USER_PASS=""
 MS_USER_NAME=""
 MS_USER_PASS=""
 PROXY_URL=""

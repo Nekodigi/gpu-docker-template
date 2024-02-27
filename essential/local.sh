@@ -1,12 +1,8 @@
 GPU_URL=""
-USER_NAME =""
+USER_NAME=""
 
 yes y |  ssh-keygen -t rsa -b 4096   
 scp ~/.ssh/id_rsa.pub $USER_NAME@$GPU_URL:~/.ssh/authorized_keys
-
-cd ~
-git clone https://github.com/Nekodigi/gpu-docker-template.git
-cd gpu-docker-template/essential
 
 scp setup.sh $USER_NAME@$GPU_URL:~/setup.sh
 scp test.sh $USER_NAME@$GPU_URL:~/test.sh
