@@ -1,7 +1,8 @@
-source env.sh
+USER =""
+GPU_URL=""
 
-yes y |  ssh-keygen -t rsa -b 4096   All Enter!
-scp ~/.ssh/id_rsa.pub $USER@$GPU_URL:~/.ssh/authorized_keys (pass)
+yes y |  ssh-keygen -t rsa -b 4096   
+scp ~/.ssh/id_rsa.pub $USER@$GPU_URL:~/.ssh/authorized_keys
 
 cd ~
 git clone https://github.com/Nekodigi/gpu-docker-template.git

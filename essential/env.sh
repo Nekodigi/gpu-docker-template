@@ -1,2 +1,0 @@
-USER =""
-GPU_URL=""
