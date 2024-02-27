@@ -1,7 +1,7 @@
 sync() {
     #do things with parameters like $1 such as
     git add .
-    git commit -m '${1}'
+    git commit -m $1
     git push origin HEAD
 }
 
