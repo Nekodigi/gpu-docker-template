@@ -20,3 +20,4 @@ export http_proxy https_proxy ftp_proxy socks_proxy HTTP_PROXY HTTPS_PROXY' > ~/
 echo 'source ~/proxy.sh' >> ~/.bash
 echo 'source ~/proxy.sh' >> ~/.bash_profile
 echo 'source ~/proxy.sh' >> ~/.zshrc
+echo "==SETUP COMPLETED=="
