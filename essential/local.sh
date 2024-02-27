@@ -6,7 +6,6 @@ scp ~/.ssh/id_rsa.pub $USER@$GPU_URL:~/.ssh/authorized_keys (pass)
 cd ~
 git clone https://github.com/Nekodigi/gpu-docker-template.git
 cd gpu-docker-template/essential
-code setup.sh
 
 scp setup.sh $USER@$GPU_URL:~/setup.sh
 scp test.sh $USER@$GPU_URL:~/test.sh
