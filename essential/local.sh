@@ -1,11 +1,14 @@
-GPU_URL=""
-USER_NAME=""
+. ./env.sh
 
 yes y |  ssh-keygen -t rsa -b 4096   
-scp ~/.ssh/id_rsa.pub $USER_NAME@$GPU_URL:~/.ssh/authorized_keys
+ssh-copy-id $USER_NAME@$GPU_URL
 
+scp env.sh $USER_NAME@$GPU_URL:~/env.sh
 scp setup.sh $USER_NAME@$GPU_URL:~/setup.sh
 scp test.sh $USER_NAME@$GPU_URL:~/test.sh
 scp better.sh $USER_NAME@$GPU_URL:~/better.sh
-ssh $USER_NAME@$GPU_URL sh setup.sh
-ssh $USER_NAME@$GPU_URL "source ~/.zshrc; sh test.sh"
+
+ssh $USER_NAME@$GPU_URL pwd
+ssh $USER_NAME@$GPU_URL source env.sh
+ssh $USER_NAME@$GPU_URL "source env.sh; sh setup.sh"
+ssh $USER_NAME@$GPU_URL "source proxy.sh; sh test.sh"
