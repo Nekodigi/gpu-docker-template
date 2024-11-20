@@ -13,6 +13,7 @@ GPU サーバーで簡単に利用できる Docker 環境です。
   - [2 利用方法](#2-利用方法)
     - [2.1 初期設定](#21-初期設定)
     - [2.2 Docker 環境を新たに作る場合](#22-docker-環境を新たに作る場合)
+    - [2.3 Pytorch のバージョンを変更したい場合](#23-pytorch-のバージョンを変更したい場合)
   - [3 トラブルシューティング](#3-トラブルシューティング)
     - [3.1 既知の問題](#31-既知の問題)
     - [3.2 新たな問題](#32-新たな問題)
@@ -33,6 +34,8 @@ GPU サーバーで簡単に利用できる Docker 環境です。
 - /setup.sh #local.shによってGPUサーバーにコピーされ、サーバー上で実行される
 - /test.sh #setup.shによって設定が正しく行われたか検証(GPUサーバ側)
 - /utils.sh #(未使用)
+
+
 /example  #!!!!基本的にこのディレクトリのみを使う。nekodigi/gpu_essentialsをベースとし
 - /requirements.txt #インストールするライブラリを記述
 - /docker-compose.yml #GPU割り当て数の資源割り当て、ローカルのフォルダをDockerにマウントするために使用
@@ -83,6 +86,12 @@ nvcr.io/nvidia/pytorch:24.01-py3
     - RUN [Docker 内で実行したいコマンド] #Docker 内にライブラリをインストールする場合に利用。sudo は必要ない
   - .decvontainer/devcontainer.json
     - "name": "[vscode での表示名]",
+- Docker に入った状態なら"Rebuild Container"を Vscode で実行することで初めて、変更が反映されます。この時、マウントされていない Docker 内のみに存在するファイルは全てリセットされます。
+
+### 2.3 Pytorch のバージョンを変更したい場合
+
+nekodigi/gpu_essentials にインストールされているライブラリのバージョンを変更したい場合は、一から Docker イメージをビルドする必要があります。  
+/essential の中身を参考にしてください・
 
 ## 3 トラブルシューティング
 
