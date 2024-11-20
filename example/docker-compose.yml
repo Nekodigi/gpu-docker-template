@@ -5,20 +5,22 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: gpu_essentials
+    container_name: gpu_essentials #名前が同じであれば実行できない可能性があるので、変更する
     ports:
       - "3000:3000"
-    volumes:
-      - ../../app:/app
+    volumes: # PCのディレクトリをDockerにマウントしてアクセスできるようにする
+      #- [PC側のpath]/[Docker側のpath]  (DockerからOpen Folderで開ける)
+      - .:/app #Docker内でvscodeが立ち上がった際は/appが開く。
+      - ../.cache:/root/.cache
+      - /data1/shared:/shared
     tty: true
-    shm_size: "4gb"
+    shm_size: "4gb" #少ないとエラーが出ることがある
     deploy:
       resources:
         reservations:
-          memory: 4G
           devices:
             - driver: nvidia
-              count: 1
+              #device_ids: ['0', '1'] #利用できるGPUを指定したい場合
               capabilities:
                 - gpu
                 - utility # nvidia-smi
