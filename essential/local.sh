@@ -1,6 +1,9 @@
 . ./env.sh
 
-yes y |  ssh-keygen -t rsa -b 4096   
+if [ ! -f ~/.ssh/id_rsa ]
+then
+    ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa -N ''
+fi
 ssh-copy-id $USER_NAME@$GPU_URL
 
 scp env.sh $USER_NAME@$GPU_URL:~/env.sh
