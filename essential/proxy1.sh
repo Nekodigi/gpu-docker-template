@@ -1,0 +1,7 @@
+export HTTP_PROXY="$ALL_PROXY"
+export HTTPS_PROXY="$ALL_PROXY"
+export FTP_PROXY="$ALL_PROXY"
+export all_proxy="$ALL_PROXY"
+export http_proxy="$HTTP_PROXY"
+export https_proxy="$HTTPS_PROXY"
+export ftp_proxy="$FTP_PROXY"
