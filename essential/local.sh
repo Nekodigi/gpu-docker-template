@@ -29,10 +29,8 @@ then
             | sed -e 's/@/%40/g')@$proxy"
     fi
 
-    proxy="$(printf '%s\n' "$proxy" \
-        | sed -e 's/\(["$`\]\)/\\\1/g')"
-
-    printf 'export ALL_PROXY="%s"\n' "$proxy" \
+    printf 'export ALL_PROXY="%s"\n' "$(printf '%s\n' "$proxy" \
+        | sed -e 's/\(["$`\]\)/\\\1/g')" \
         | cat - proxy1.sh > proxy.sh
     chmod 600 proxy.sh
 
