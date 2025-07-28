@@ -31,6 +31,7 @@ GPU サーバーで簡単に利用できる Docker 環境です。
 #以下のファイルは、環境設定の際に一度だけ使う
 - /env.sh #環境変数を**ユーザ**が記入するファイル。のちの.shファイルで参照
 - /local.sh #VDIから実行する。
+- /proxy1.sh #local.sh によって proxy.sh の末尾に追加される
 - /setup.sh #local.shによってGPUサーバーにコピーされ、サーバー上で実行される
 - /test.sh #setup.shによって設定が正しく行われたか検証(GPUサーバ側)
 - /utils.sh #(未使用)
