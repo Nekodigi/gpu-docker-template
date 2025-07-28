@@ -29,10 +29,14 @@ then
             | sed -e 's/@/%40/g')@$proxy"
     fi
 
+    if [ ! -f proxy.sh ]
+    then
+        touch proxy.sh
+    fi
+    chmod 600 proxy.sh
     printf 'export ALL_PROXY="%s"\n' "$(printf '%s\n' "$proxy" \
         | sed -e 's/\(["$`\]\)/\\\1/g')" \
         | cat - proxy1.sh > proxy.sh
-    chmod 600 proxy.sh
 
     scp proxy.sh setup.sh test.sh better.sh "$USER_NAME@$GPU_URL:~"
 
