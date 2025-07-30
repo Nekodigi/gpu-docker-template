@@ -29,6 +29,11 @@ then
             | sed -e 's/@/%40/g')@$proxy"
     fi
 
+    if [ -n "$PROXY_PREFIX" ]
+    then
+        proxy="$PROXY_PREFIX$proxy"
+    fi
+
     if [ ! -f proxy.sh ]
     then
         touch proxy.sh
